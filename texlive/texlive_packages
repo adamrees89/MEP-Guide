@@ -28,9 +28,9 @@ pgfplots
 relsize
 setspace
 siunitx
-textcomp
 titlesec
 todonotes
 ulem
+url
 xcolor
 xstring
