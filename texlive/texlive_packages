@@ -5,6 +5,7 @@ booktabs
 caption
 chemfig
 colortbl
+draftwatermark
 enumitem
 etoolbox
 fancyhdr
@@ -24,7 +25,7 @@ pgf
 pgfplots
 relsize
 setspace
+titlesec
 todonotes
 xcolor
 xstring
-draftwatermark
