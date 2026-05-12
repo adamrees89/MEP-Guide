@@ -66,7 +66,7 @@ This script installs TeX Live 2026 into `/tmp/texlive`, configures the repositor
 ### Top-level files
 
 - `README.md` - This file.
-- `LICENSE` - Repository license.
+- `LICENCE` - Repository licence.
 - `CODE_OF_CONDUCT.md` - Community guidelines.
 - `CONTRIBUTING.md` - Contribution rules and workflow.
 - `library.bib` - Bibliography referenced from the document.
@@ -112,11 +112,11 @@ pdflatex MEP_Guide.tex
 rm *.aux *.log *.toc *.gls *.glo *.glg *.ist *.gz
 ```
 
-## License and governance
+## Licence and governance
 
 This project is governed by the files already included in the repository:
 
-- `LICENSE`
+- `LICENCE`
 - `CODE_OF_CONDUCT.md`
 - `CONTRIBUTING.md`
 
