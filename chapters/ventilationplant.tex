@@ -117,6 +117,7 @@ using the labels in \autoref{fig:PHXWithLabels}, the equation becomes;
 \end{derivation}
 
 \subsection{Frost Coils}
+\label{ssec:FrostCoils}
 
 During the winter ventilation design condition, which is typically fully saturated air at temperatures lower than \SI{0}{\celsius}, the build-up of ice within an AHU is possible.  Ice can build-up on filters, plate-heat exchangers, or coils that are not heated (i.e. cooling coils or in-active heating coils), but typically only when the unit is running.  To combat the ice build up, frost coils can be installed which are sized with sufficient capacity to raise the temperature from the external design condition (say \SI{-5}{\celsius}) to a positive temperature (typically \SI{5}{\celsius}).
 
@@ -125,6 +126,10 @@ Whilst the unit is operational it is fair to assume that the heating coil and en
 Using a frost coil within an AHU will increase the internal static pressure required to be overcome by the fans (Increasing specific fan power (SFP)), reduce the difference in temperature across the energy recovery device (reducing the 'free' energy applied to the supply air stream\footnote{'free' in the sense of recovered energy that would otherwise be lost to atmosphere without the energy recovery device}), and increase the cost of both the unit and installation.
 
 If a frost coil is omitted from an AHU then additional precautions are required, for example, additional control routines would be built into the control system that would shut dampers if the unit begins to freeze and turn the heating coil to full to attempt to defrost any frozen components.  If a cooling coil is present within the unit, then it would need to be sited after the heating coil to prevent any potential freezing within the coil; however, this precludes the ability to dehumidify the air stream should it be necessary/desired.
+
+\subsubsection{Fog Coils}
+
+The concept of a fog coil was introduced by \gls{HTM} 03-01\footnote{HTM 03-01: Specialised ventilation for healthcare premises, Part A: Design and validation, 2018} as an alternative to the standard frost coils described previously in \autoref{ssec:FrostCoils}.  The fog coil is designed to increase the incoming tempeature by a fixed amount, typically, \si{3}{\celsius}), this moves the incoming air condition away from the dew point without the need to raise the temperature to a positive value, and therefore reduces the energy demand of the coil and the associated increase in fan power.
 
 \subsubsection{Calculations with and without Frost Coils}
 
@@ -196,20 +201,20 @@ And assuming a cost of \SI{2.57}{p\per\kilo\watt\hour}, the LTHW required by the
 Q = 0.11 \times 4.187 \times (80-60) = 9.21 kW
 \end{equation}
 
-Using the costs above, the LTHW generation for the AHU without frost coils costs £5.68 per 24 hours.  Although the cost is relatively small this is the cost of generating LTHW to serve the AHU demand, and the  difference can add up when considering the complete winter period where temperatures can be negative for a lot longer than 24 hours!  This cost analysis does not consider the increase in fan running cost due to the increased resistance from the frost coil, which affects the running cost year-round whether the frost coil is active or not.  \autoref{tab:FrostCoilCost} give a summary of the running energy and costs for an AHU with and without a frost coil.
+Using the costs above, the LTHW generation for the AHU without frost coils costs £5.68 per 24 hours.  Although the cost is relatively small this is the cost of generating LTHW to serve the AHU demand, and the  difference can add up when considering the complete winter period where temperatures can be negative for a lot longer than 24 hours!  This cost analysis does not consider the increase in fan running cost due to the increased resistance from the frost coil, which affects the running cost year-round whether the frost coil is active or not.  \autoref{tab:FrostCoilCost} give a summary of the running energy and costs for an AHU with and without a frost coil, a fog coil has also been included in the table for comparison.
 
 \begin{table}
 \centering
 \begin{tabular}{cccc}
 \hline
-Frost Coil & HR Temperature (hi) & Heating Demand & Cost per 24 hours\\
+Pre-Coil Type & HR Temperature (hi) & Heating Demand & Cost per 24 hours\\
 \hline
-Yes & \SI{16}{\celsius} & \SI{0.20}{\kilo\gram\per\second} & \pounds11.36 \\
-No & \SI{13}{\celsius} & \SI{0.10}{\kilo\gram\per\second} & \pounds5.68 \\
+Frost & \SI{16}{\celsius} & \SI{0.20}{\kilo\gram\per\second} & \pounds11.36 \\
+Fog & \SI{14}{\celsius} & \SI{0.13}{\kilo\gram\per\second} & \pounds7.43 \\
+None & \SI{13}{\celsius} & \SI{0.10}{\kilo\gram\per\second} & \pounds5.68 \\
 \hline
-Difference & \SI{3}{\celsius} & \SI{0.10}{\kilo\gram\per\second} & \pounds5.68 \\
 \end{tabular}
-\caption{Table showing differences in AHU running costs both with and without a frost coil.  The AHU considered has a flow rate of \SI{1}{\cubic\metre\per\second}, a energy recovery device with an efficiency of 73\%, and a supply air set point of \SI{20}{\celsius}.  The external air temperature in this example is \SI{-5}{\celsius}.}
+\caption{Table showing differences in AHU running costs both with and without a frost coil.  The AHU considered has a flow rate of \SI{1}{\cubic\metre\per\second}, a energy recovery device with an efficiency of 73\%, and a supply air set point of \SI{20}{\celsius}.  The external air temperature in this example is \SI{-5}{\celsius} and fully saturated.}
 \label{tab:FrostCoilCost}
 \end{table}
 

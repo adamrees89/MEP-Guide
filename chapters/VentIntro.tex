@@ -38,7 +38,7 @@ See Equation~\ref{eq:BasicEnergyBalanceVolumetric} if you want to use volumetric
 \section{Units}
 \label{sec:Units}
 
-Cubic metres per second [\si{\cubic\metre\per\second}], litres per second [\si{\litre\per\second}], kilograms per second [\si{\kilo\gram\per\second}], air changes per hour [\gls{ACH}] and so on.
+Cubic metres per second [\si{\cubic\metre\per\second}], litres per second [\si{\litre\per\second}], kilograms per second [\si{\kilo\gram\per\second}], \gls{ACH} and so on.
 
 \begin{itemize}
 \item \si{\cubic\metre\per\second}, is used for larger volumetric air flow rates, there are a 1,000 litres in a cubic meter of air.
@@ -59,9 +59,12 @@ Converting from volumetric flow [\si{\cubic\metre\per\second}], [\si{\litre\per\
 Air Temperature & Air Density ($\rho$)\\
 \si{\celsius} & \si{\kilo\gram\per\cubic\metre}\\
 \hline
+0 & 1.292\\
 10 & 1.246\\
 20 & 1.204\\
 30 & 1.164\\
+40 & 1.127\\
+50 & 1.093\\
 \hline
 \end{tabular}
 \caption{Density of air at differing air temperatures}
@@ -192,7 +195,7 @@ The thermal convection method (Method 1) is the only acceptable method for final
 
 This method uses the thermal convection method, and specifies a [\si{\cubic\metre\per\second}] per [\si{\square\metre}] of catering appliance work area.  Table 2 in DW172 shows volumetric extract flow rates for different appliances, then applying a canopy factor.  An example of calculating the total extract rate is given in~\autoref{tab:DW172Method1Example}.
 
-\begin{table}
+\begin{table}[H]
 \centering
 \begin{tabular}{lcccc}
 \hline
@@ -219,7 +222,7 @@ Salamander Grille & 0.3000 & Gas & 0.75 & 0.225\\
 
 If the size of the canopy is known, but not the full detail of the catering equipment being installed, then by using the face velocity method the total extract rate can be estimated.  \autoref{tab:DW172Method2Example} shows the velocities for different equipment types, and the fastest face velocity should be used.
 
-\begin{table}
+\begin{table}[H]
 \centering
 \begin{tabular}{cc}
 \hline
@@ -245,7 +248,7 @@ A volumetric extract flow rate calculated by assigning a [\si{\cubic\metre\per\s
 
 \subsubsection{Extract Sizing - Method 4}
 
-Method 4 is based on air changes per hour [ACH], starting at 40 ACH for volumetric extract and increasing this if high output or densely packed equipment is used.  ACH rates of up to 120 can be seen, and 40 ACH is regarded as the minimum.
+Method 4 is based on \gls{ACH}, starting at 40 ACH for volumetric extract and increasing this if high output or densely packed equipment is used.  ACH rates of up to 120 can be seen, and 40 ACH is regarded as the minimum.
 
 \subsubsection{Extract Sizing - Method 5}
 
