@@ -1,0 +1,73 @@
+name: Build PDF from LaTeX
+
+on: ["pull_request"]
+
+permissions:
+  contents: write          # required to push commits
+  pull-requests: read
+
+concurrency:
+  group: pdf-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Checkout the PR source branch so we can push to it
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+    
+      - name: Cache TeX Live installation
+        uses: actions/cache@v4
+        with:
+          path: /tmp/texlive
+          key: texlive-2026-${{ hashFiles('texlive/texlive.profile', 'texlive/texlive_packages') }}
+          restore-keys: |
+            texlive-2026-
+
+      - name: Install TeX Live + packages
+        shell: bash
+        run: |
+          chmod +x texlive/texlive_install.sh
+          texlive/texlive_install.sh
+
+      - name: Build PDF
+        shell: bash
+        run: |
+          export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
+          latexmk -pdf -interaction=nonstopmode -halt-on-error -file-line-error "MEP_Guide.tex"
+          
+        
+      - name: Commit PDF back to PR branch
+        run: |
+            set -e
+  
+            # Make sure we’re on the PR branch
+            echo "On branch: $(git branch --show-current)"
+  
+            # Add the built PDF
+            git add "MEP_Guide.pdf"
+  
+            # If nothing changed, exit gracefully
+            if git diff --cached --quiet; then
+              echo "No PDF changes to commit."
+              exit 0
+            fi
+  
+            # Configure bot identity
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+  
+            # Commit with a message that can be used to skip other workflows if needed
+            git commit -m "chore(pdf): update generated PDF [skip ci]"
+  
+            # Push back to the PR branch
+            git push origin HEAD:${{ github.head_ref }}
+
+
+
+

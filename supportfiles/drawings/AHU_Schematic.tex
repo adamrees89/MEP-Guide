@@ -1,0 +1,98 @@
+\begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8}]
+
+%AHU Casing and labels
+\draw [black] (2.5,0) rectangle (15,4);
+\draw [gray] (2.5,2) -- (15,2);
+
+\draw [<-] (0,1) -- (2,1);
+\draw [->] (0,3) -- (2,3);
+
+\node [above] at (1,3) {Air Intake};
+\node [above] at (1,1) {Exhaust Air};
+
+\draw [->] (15.5,1) -- (17.5,1);
+\draw [<-] (15.5,3) -- (17.5,3);
+
+\node [above] at (16.5,3) {Return Air};
+\node [above] at (16.5,1) {Supply Air};
+
+%Intake & Exhaust Dampers
+
+\draw [gray] (2.5,2) rectangle (3,4);
+\draw [gray] (2.5,0) rectangle (3,2);
+
+\draw [gray] (2.5,4) -- (3,3.5) -- (2.5,3) -- (3,2.5) -- (2.5,2);
+\draw [fill, gray] (2.75,3.75) circle [radius=0.05];
+\draw [fill, gray] (2.75,3.25) circle [radius=0.05];
+\draw [fill, gray] (2.75,2.75) circle [radius=0.05];
+\draw [fill, gray] (2.75,2.25) circle [radius=0.05];
+
+\draw [gray] (2.5,0) -- (3,0.5) -- (2.5,1) -- (3,1.5) -- (2.5,2);
+\draw [fill, gray] (2.75,1.75) circle [radius=0.05];
+\draw [fill, gray] (2.75,1.25) circle [radius=0.05];
+\draw [fill, gray] (2.75,0.75) circle [radius=0.05];
+\draw [fill, gray] (2.75,0.25) circle [radius=0.05];
+
+\node [above] at (2.75,4) {(1)};
+\node [below] at (2.75,0) {(11)};
+
+%Frost Coil
+
+\draw [gray] (3.25,4.1) -- (3.25,2.1) -- (3.35,2.1) -- (3.35,3.9) -- (3.45,3.9) -- (3.45,2.1) -- (3.55,2.1) -- (3.55,4.1);
+
+\node [above] at (3.4,4) {(2)};
+
+%Supply Filters (Panel and then Box)
+
+\draw [gray] (4,2) rectangle (4.5,4);
+\draw [gray] (4.5,2) rectangle (5.75,4);
+
+\draw [gray] (4,2) -- (4.5,2.5) -- (4,3) -- (4.5,3.5) -- (4,4);
+\draw [gray, rounded corners] (4.5,2) -- (5.65,2.3) -- (5.65,2.7) -- (4.5,3) -- (5.65,3.3) -- (5.65,3.7) -- (4.5,4);
+
+\node [above] at (4.25,4) {(3)};
+\node [above] at (5.125,4) {(4)};
+
+%PHX Drawing
+
+\draw [gray] (6,0) rectangle (10,4);
+\draw [gray] (8,0) -- (10,2) -- (8,4) -- (6,2) -- (8,0);
+\node [above] at (8,4) {(5)};
+
+%Supply Fan
+
+\draw [gray] (10.25,0) rectangle (12.25,2);
+\fill [gray, pattern= north west lines, opacity=0.4,draw] (11.25,1) circle [radius = 0.75];
+\fill [gray, fill = white, opacity=1, draw] (11.25,1) circle [radius = 0.4];
+\draw [fill, gray] (11.25,1) circle [radius=0.1];
+\draw [gray] (10.75,0) -- (11.25,1) -- (11.75,0);
+\node [below] at (11.25,0) {(6)};
+
+%Cooling Coil
+
+\draw [gray] (12.5,-0.1) -- (12.5,1.9) -- (12.6,1.9) -- (12.6,0.1) -- (12.7,0.1) -- (12.7,1.9) -- (12.8,1.9) -- (12.8,0.1) -- (12.9,0.1) -- (12.9,1.9) -- (13,1.9) -- (13,0.1) -- (13.1,0.1) -- (13.1,1.9) -- (13.2,1.9) -- (13.2,0.1) -- (13.3,0.1) -- (13.3,1.9) -- (13.4,1.9) -- (13.4,-0.1);
+
+\node [below] at (12.95,0) {(7)};
+
+%Re-heat Coil
+
+\draw [gray] (14,-0.1) -- (14,1.9) -- (14.1,1.9) -- (14.1,0.1) -- (14.2,0.1) -- (14.2,1.9) -- (14.3,1.9) -- (14.3,0.1) -- (14.4,0.1) -- (14.4,1.9) -- (14.5,1.9) -- (14.5,-0.1);
+
+\node [below] at (14.25,0) {(8)};
+
+%Return Air Filter (Panel)
+
+\draw [gray] (10.25,2) rectangle (10.75,4);
+\draw [gray] (10.75,4) -- (10.25,3.5) -- (10.75,3) -- (10.25,2.5) -- (10.75,2);
+\node [above] at (10.5,4) {(9)};
+
+%Return Air Fan
+
+\draw [gray] (5.75,0) rectangle (3.75,2);
+\fill [gray, pattern= north west lines, opacity=0.4,draw] (4.75,1) circle [radius = 0.75];
+\fill [gray, fill = white, opacity=1, draw] (4.75,1) circle [radius = 0.4];
+\draw [fill, gray] (4.75,1) circle [radius=0.1];
+\draw [gray] (4.25,0) -- (4.75,1) -- (5.25,0);
+\node [below] at (4.75,0) {(10)};
+
+\end{tikzpicture}

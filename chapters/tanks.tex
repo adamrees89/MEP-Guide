@@ -1,0 +1,115 @@
+\chapter{Water Tanks}
+\label{chp:tanks}
+\fancyhead[C]{Chapter \ref{chp:tanks}}
+
+\todo[inline, color=blue!10]{Put an intro to the tank section here.  Also need to decide what is going in this section}
+
+\section{Tank Types}
+
+
+
+\subsection{Sectional Tanks}
+
+Sectional tanks usually require levelling steels as a base to be installed upon, these can be \SI{50}{\milli\metre} high.
+
+\subsubsection{Externally Flanged}
+
+
+
+\subsubsection{Internally Flanged}
+\label{ssec:TIFTank}
+
+
+
+\subsection{One piece GRP tanks}
+
+
+
+\subsection{Underground Tanks}
+
+
+
+\subsection{\gls{CWS} Tanks}
+
+
+
+\subsection{\gls{HWS} Tanks}
+
+
+
+\subsection{Sprinkler Tanks}
+
+Sprinkler tanks may need to conform to LPCB requirements.  In terms of sizing and specifying a tank, this means that a raised ball-valve chamber is required in order to maintain a class AB air gap.
+
+\section{Tank Sizing}
+
+\todo[inline, color=blue!10]{See Domestic Water System Calculator - Excel Sheet}
+
+\subsection{Tanks in Small Spaces}
+
+Sometimes a tank of a certain capacity is required but the space to install a tank is limited.  The following subsections detail the usually allowed dimensions and sizes, alongside alternatives that may enable a tank to squeeze into a tight space.
+
+\subsubsection{Access Space}
+
+Usually \SI{600}{\milli\metre} is allowed as a minimum around the tank in order to tighten the bolts on an externally flanged tank; however, by using a totally internally flanged tank (described in~\autoref{ssec:TIFTank}), the access space can be reduced to nothing and the tank installed within the corner of a room.  Access is still required to the manway and valve chambers.
+
+\subsubsection{Raised Ball Valve Chamber}
+
+Typically a raised ball valve chamber can help with space restrictions where the room height is not the same throughout the room; for example, where the ceiling is stepped or sloped.  The raised ball valve chamber can be positioned at the higher end of the room allowing the full height of the tank to be used to store water in the lower end of the room.
+Typical raised ball valve chambers are \SI{450}{\milli\metre} high, whereas manufacturers sometimes offer smaller 'special' raised ball valve chambers such as a \SI{250}{\milli\metre} high chamber from Balmoral Tanks which has side access to the valve.
+
+\subsubsection{Manway}
+
+Access to the internals of the tank is required for periodic cleaning when the tank is drained.  Standard arrangements involve manways located on the top surface of the tank, complete with a fixed 'cat' ladder.  Where height is restricted, the manway can be relocated to the side wall of the tank, with a standard ladder on both the inside and outside of the tank to allow access, one drawback is that the tank has to be drained before the manway can be opened.
+
+\section{Tank Inlet}
+
+\todo[inline, color=blue!10]{Include filtering (inc. automatic backwash filter), and valves}
+
+
+\section{Gravity Discharge from a tank}
+
+Discharge from a tank by gravity alone is dependant on the following; Outlet Area (A), Acceleration due to Gravity (g), Height from the outlet to the water level (H), and the Coefficient of Discharge (C\textsubscript{d}).  \autoref{fig:SideDischargeCWSTank} shows a tank open to atmosphere with a side-wall discharge, and \autoref{eq:SideTankDischarge} describes the volumetric flow rate through the outlet based on gravity flow, and an example tank discharge has been calculated in \autoref{eq:SideTankDischargeExample}.
+
+\begin{figure}
+\centering
+\input{./supportfiles/TankSideDischarge}
+\caption{Sidewall gravity discharge from a tank}
+\label{fig:SideDischargeCWSTank}
+\end{figure}
+
+\begin{equation}\label{eq:SideTankDischarge}
+Q = C_{d} A (2gH)^{\frac{1}{2}}
+\end{equation}
+
+\begin{equation}\label{eq:SideTankDischargeExample}
+Q = 0.5 \times 0.00008 \times (2\times9.81\times0.8)^{0.5} = 0.00016~\si{\cubic\metre\per\second} = 0.16~\si{litre\per\second}
+\end{equation}
+
+To calculate the centre line velocity of the discharge (U), \autoref{eq:VelocityOfDischarge} is used, and example for the same tank has been shown in \autoref{eq:VelocityOfDischargeExample}.  C\textsubscript{v} has been assumed to be 0.97 in this example.
+
+\begin{equation}\label{eq:VelocityOfDischarge}
+U = C_v (2gH)^{\frac{1}{2}}
+\end{equation}
+
+\begin{equation}\label{eq:VelocityOfDischargeExample}
+U = 0.97 \times (2 \times 9.81 \times 0.8)^{0.5} = 3.84~\si{\metre\per\second}
+\end{equation}
+
+Finally the reaction force (F) from the water nozzle can be calculated from \autoref{eq:reactionForceSideWallTank}, the density of water ($\rho$) has been taken as \SI{1,000}{\kilo\gram\per\cubic\metre}.  The example tank has been shown in \autoref{eq:reactionForceSideWallTankExample}
+
+\begin{equation}\label{eq:reactionForceSideWallTank}
+F = \rho Q U
+\end{equation}
+
+\begin{equation}\label{eq:reactionForceSideWallTankExample}
+F = 1,000 \times 0.00016 \times 3.84 = 0.61~\si{\kilo\gram\metre\per\square\second} = 0.61~\si{\newton}
+\end{equation}
+
+\section{Solar Hot Water Tank Arrangment}
+
+\todo[inline, color=blue!10]{See notes in OneNote link}
+
+{\href{onenote:https://d.docs.live.net/33676fdd148de65e/OneNote\%20Files/Office\%20Notes/Public\%20Health/HWS\%20and\%20CWS.one#Solar\%20HW\%20Integration&section-id={CDF195EF-EBF9-4E7F-97E4-835971FAE7B4}&page-id={6E63D765-EF92-42D4-86DD-BE109CCEF008}&end}{\underline{OneNote Solar HW Integration Notes}}
+
+\section{Feed and Expansion Tank}

@@ -1,0 +1,69 @@
+\documentclass[11pt, a4paper, final]{report}
+
+\input{./supportfiles/set-up}
+
+\begin{document}
+
+\input{./supportfiles/title.tex}
+\input{./supportfiles/internal_pages.tex}
+\pagenumbering{roman} \setcounter{page}{2}
+%\glsunsetall
+\tableofcontents
+%\listoffigures
+%\addcontentsline{toc}{chapter}{List of Figures}
+%\listoftables
+%\addcontentsline{toc}{chapter}{List of Tables}
+\glsresetall
+\printglossaries
+
+\pagenumbering{arabic} \setcounter{page}{1}
+\doublespacing
+
+%Beginning of actual writing
+
+\listoftodos[To-Do:]
+
+%--------------------------------------------
+%Part - Ventilation
+%--------------------------------------------
+\part{Ventilation}
+\fancyhead[R]{Ventilation}
+%input tex files here
+\input{./chapters/VentIntro}
+\input{./chapters/psychrometrics}
+\input{./chapters/HandCviaAir}
+\input{./chapters/Ventilationplant}
+\input{./chapters/Distribution}
+%--------------------------------------------
+%Part - Heating and Cooling
+%--------------------------------------------
+\part{Heating and Cooling}
+\fancyhead[R]{Heating and Cooling}
+%input tex files here
+\input{./chapters/HCIntro}
+%--------------------------------------------
+%Part - Domestic Water Services
+%--------------------------------------------
+\part{Domestic Water Services}
+\fancyhead[R]{Domestic Water Services}
+%input tex files here
+\input{./chapters/tanks}
+\input{./chapters/WaterLoads}
+%--------------------------------------------
+%Part - Drainage and Rainwater
+%--------------------------------------------
+\part{Drainage and Rainwater}
+\fancyhead[R]{Drainage and Rainwater}
+%input tex files here
+
+%--------------------------------------------
+
+%\fancyhead[C]{Bibliography}
+%
+%\bibliographystyle{unsrt} % Ordered by appearance
+%\bibliography{./library}
+%\addcontentsline{toc}{chapter}{Bibliography}
+
+%\appendix
+
+\end{document}

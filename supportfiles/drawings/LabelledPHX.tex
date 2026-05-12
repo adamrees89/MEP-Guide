@@ -1,0 +1,30 @@
+\begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8}]
+
+
+%PHX Drawing
+
+\draw [gray] (6,0) rectangle (10,4);
+\draw [gray] (8,0) -- (10,2) -- (8,4) -- (6,2) -- (8,0);
+\draw [gray] (6,2) -- (10,2);
+\node [above] at (8,4) {PHX};
+
+\node [right] at (12,2) {Room Side};
+\node [left] at (4,2) {External Side};
+
+%Air Path Drawings
+
+\draw [blue, ->] plot [smooth] coordinates {(5,3) (7,3) (8,2) (9,1) (11,1)};
+\draw [red, <-] plot [smooth] coordinates {(5,1) (7,1) (8,2) (9,3) (11,3)};
+
+%Node labels
+
+\node [above] at (11,1) {$t_2 = t_{co}$};
+\node [above] at (11,3) {$t_3 = t_{hi}$};
+
+\node [above] at (5,1) {$t_4 = t_{ho}$};
+\node [above] at (5,3) {$t_1 = t_{ci}$};
+
+\node [below] at (5,3) {$m_1$};
+\node [below] at (11,3) {$m_2$};
+
+\end{tikzpicture}

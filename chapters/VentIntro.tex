@@ -1,0 +1,248 @@
+\chapter{Introduction}
+\label{chp:Vintro}
+\fancyhead[C]{Chapter \ref{chp:Vintro}}
+
+This chapter will outline some of the basics of ventilation system design, such as \hyperref[sec:Units]{Units}, and \hyperref[sec:ventRates]{Ventilation Rates.}
+
+\section{Energy Balances}
+\label{sec:EnergyBalances}
+
+When performing design calculations on air flow rates, we need to know the energy transfer from different fluids either through coils, mixed air, or other means.  The following equations describe the energy balance commonly used within Building Services design.
+
+Equation~\ref{eq:BasicEnergyBalance}, shows the relationship between Energy in Kilo-Watts [\si{\kilo\watt}], Mass Flow Rate in kilograms per second [\si{\kilo\gram\per\second}], Specific Heat Capacity in Joules/Gram-Kelvin [\si{\joule\per\gram\kelvin}], and Temperature Difference in Kelvin [\si{\kelvin}].  Equations~\ref{eq:BasicEnergyBalanceDimensional} through~\ref{eq:BasicEnergyBalanceDimensionalEnd}, shows the dimensional analysis of equation~\ref{eq:BasicEnergyBalance}.
+
+\begin{equation}\label{eq:BasicEnergyBalance}
+Q = m~C_p~\delta T
+\end{equation}
+
+Expressing equation~\ref{eq:BasicEnergyBalance} as units:
+
+\begin{equation}\label{eq:BasicEnergyBalanceDimensional}
+\left[ \frac{kg}{s} \right] \left[ \frac{J}{g\cdot K} \right] \left[ \frac{K}{1} \right]
+\end{equation}
+
+Equation~\ref{eq:BasicEnergyBalanceDimensional} can be reduced by removing Kelvin and grams from both the denominator and numerator:
+
+\begin{equation}
+\left[ \frac{k\cancel{g}}{s} \right] \left[ \frac{J}{\cancel{g} \cdot \cancel{K}} \right] \left[ \frac{\cancel{K}}{1} \right]
+\end{equation}
+
+This gives equation~\ref{eq:BasicEnergyBalanceDimensionalEnd}, note the definition of Watts [\si{\watt}] as a Joule per second [\si{\joule\per\second}]:
+
+\begin{equation}\label{eq:BasicEnergyBalanceDimensionalEnd}
+\left[ \frac{1000}{s} \right] \left[ \frac{J}{1} \right] = \left[ \frac{1000}{1} \right] \left[ \frac{W}{1} \right] = \left[ \frac{kW}{1} \right]
+\end{equation}
+
+See Equation~\ref{eq:BasicEnergyBalanceVolumetric} if you want to use volumetric flow rate [\si{\cubic\metre\per\second}, or \si{\litre\per\second}] instead of mass flow rate [\si{\kilo\gram\per\second}].
+
+\section{Units}
+\label{sec:Units}
+
+Cubic metres per second [\si{\cubic\metre\per\second}], litres per second [\si{\litre\per\second}], kilograms per second [\si{\kilo\gram\per\second}], air changes per hour [\gls{ACH}] and so on.
+
+\begin{itemize}
+\item \si{\cubic\metre\per\second}, is used for larger volumetric air flow rates, there are a 1,000 litres in a cubic meter of air.
+
+\item \si{\litre\per\second}, is used for smaller volumetric air flow rates (Single terminal units/grilles etc), a litre is defined as one cubic decimeter.
+
+\item \si{\kilo\gram\per\second}, is used to describe the mass flow rate of air, and is used when calculating energy balances .
+
+\item \gls{ACH}, is used to describe the turnover of air in a room.
+\end{itemize}
+
+Converting from volumetric flow [\si{\cubic\metre\per\second}], [\si{\litre\per\second}] to mass flow [\si{\kilo\gram\per\second}] requires the density of air [$\rho$] at the working temperature.  Table~\ref{tb:densityOfAir} shows the density of air at some common temperatures.
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{cc}
+\hline
+Air Temperature & Air Density ($\rho$)\\
+\si{\celsius} & \si{\kilo\gram\per\cubic\metre}\\
+\hline
+10 & 1.246\\
+20 & 1.204\\
+30 & 1.164\\
+\hline
+\end{tabular}
+\caption{Density of air at differing air temperatures}
+\label{tb:densityOfAir}
+\end{table}
+
+So by using a volumetric ventilation rate, which is commonly used to describe the outdoor air provision per person (See Section~\ref{sec:ventRates} for more information), we need to include density in Equation~\ref{eq:BasicEnergyBalance} so that we get sensible answers.  Equation~\ref{eq:BasicEnergyBalance}, becomes equation~\ref{eq:BasicEnergyBalanceVolumetric}.  (Dimensional analysis follows in Equations~\ref{eq:BasicEnergyBalanceDimensionalVolumetric} through~\ref{eq:BasicEnergyBalanceDimensionalEndVolumetric}, and~\ref{eq:BasicEnergyBalanceDimensionalVolumetricls} through~\ref{eq:BasicEnergyBalanceDimensionalEndVolumetricls} for \si{\litre\per\second}).
+
+\begin{equation}\label{eq:BasicEnergyBalanceVolumetric}
+Q = m~\rho~C_p~\delta T
+\end{equation}
+
+Following the reduction procedure in section~\ref{sec:EnergyBalances}, we can express equation~\ref{eq:BasicEnergyBalanceVolumetric} in units leaving equation~\ref{eq:BasicEnergyBalanceDimensionalVolumetric}:
+
+\begin{equation}\label{eq:BasicEnergyBalanceDimensionalVolumetric}
+\left[ \frac{m^3}{s} \right] \left[ \frac{kg}{m^3} \right] \left[ \frac{J}{g\cdot K} \right] \left[ \frac{K}{1} \right]
+\end{equation}
+
+Now removing [\si{\cubic\metre\per\second}], [g], and [K] from both the denominator and numerator of equation~\ref{eq:BasicEnergyBalanceDimensionalVolumetric}:
+
+\begin{equation}
+\left[ \frac{\cancel{m^3}}{s} \right] \left[ \frac{k\cancel{g}}{\cancel{m^3}} \right] \left[ \frac{J}{\cancel{g} \cdot \cancel{K}} \right] \left[ \frac{\cancel{K}}{1} \right]
+\end{equation}
+
+Leaving equation~\ref{eq:BasicEnergyBalanceDimensionalEndVolumetric}, again note the definition of Watts [W]:
+
+\begin{equation}\label{eq:BasicEnergyBalanceDimensionalEndVolumetric}
+\left[ \frac{1}{s} \right] \left[ \frac{1000}{1} \right] \left[ \frac{J}{1} \right] = \left[ \frac{1000}{1} \right] \left[ \frac{W}{1} \right] = \left[ \frac{kW}{1} \right]
+\end{equation}
+
+\vspace{1cm}
+
+The same procudre can be followed for litres per second [\si{\litre\per\second}] instead of cubic metres per second [\si{\cubic\metre\per\second}], noting the definition of [\si{\litre\per\second}] as a cubic decimeter, i.e. $1~m^3 = 1,000~l$:
+
+\begin{equation}\label{eq:BasicEnergyBalanceDimensionalVolumetricls}
+\left[ \frac{l}{s} \right] \left[ \frac{kg}{m^3} \right] \left[ \frac{J}{g\cdot K} \right] \left[ \frac{K}{1} \right]
+\end{equation}
+
+To remove both the litres from the first term numerator, and cubic meters from the second term denominator, we need to divide litres by 1,000, i.e. multiply by $1/1000$.
+
+\begin{equation}
+\left[ \frac{\cancel{l}}{s} \right] \left[ \frac{1}{1000} \right] \left[ \frac{k\cancel{g}}{\cancel{m^3}} \right] \left[ \frac{J}{\cancel{g} \cdot \cancel{K}} \right] \left[ \frac{\cancel{K}}{1} \right]
+\end{equation}
+
+\begin{equation}\label{eq:BasicEnergyBalanceDimensionalEndVolumetricls}
+\left[ \frac{1}{s} \right] \left[ \frac{J}{1} \right] = \left[ \frac{W}{1} \right]
+\end{equation}
+
+the primary difference between using [\si{\cubic\metre\per\second}] and [\si{\litre\per\second}] is the addition of $1/1000$ when cancelling the [\si{\cubic\metre}] and [\si{\litre}]; however, the $1/1000$ further cancels out and the end result provides Watts instead of kilo-Watts.
+
+\section{Shadow Gaps and Door Undercuts}
+\label{sec:shadowGapsAndDoorUndercuts}
+
+Door undercuts are used as a method of distributing air between rooms without ductwork, by simply allowing space beneath the door for air to pass then sufficient air can be introduced for a small occupied space provided that there is a method of extraction on the other side of the door.  The supply and extraction provides the air flow between the rooms, and the door undercut provides the air path.
+
+Shadow Gaps can provide an air path to a return air plenum, this avoids to use of return air grilles.  This can provide a more aesthetically pleasing finish.
+
+The calculation of free area is the same for both door undercuts and shadow gaps.  The difference being that the length of the door undercut is determined by the width of the door so only the height is adjustable, whereas the length and width of a shadow gap is adjustable.  Equation~\ref{eq:ShadowGapFreeArea}, shows the calculation of free area for a given volumetric flow rate, where $Q$ is the volumetric flow rate [\si{\cubic\metre\per\second}], $v$ is the velocity of the air stream through the gap [\si{\metre\per\second}], and $A$ is the free area [\si{\square\metre}].
+
+\begin{equation}\label{eq:ShadowGapFreeArea}
+Q = v A
+\end{equation}
+
+When using Equation~\ref{eq:ShadowGapFreeArea} to calculate the free area of a door undercut, then by knowing the door width, the height of the undercut can be specified.  This two step calculation can be combined into one as shown in equation~\ref{eq:DoorUndercutHeight}, where $h$ is the undercut height [\si{\metre}], and $w$ is the door width [\si{\metre}].
+
+\begin{equation}\label{eq:DoorUndercutHeight}
+h = \frac{Q}{w v}
+\end{equation}
+
+Sensible air velocities for shadow gaps and door undercuts are below \SI{2.0}{\metre\per\second}.  This avoids excess pressure, and noise generation.
+
+\section{Ventilation Rates}
+\label{sec:ventRates}
+
+The amount of air supplied or extracted from a space differs depending on the purpose of ventilation.  If air is supplied to maintain a good indoor air quality then the concentration of pollutants (Such as CO\textsubscript{2}) in both the supply air and indoor air needs to be considered alongside the generation of pollutants, see subsection~\ref{ssec:VentPollutantControl}.  Rules of thumb for the amount of outdoor air that should be provided per person are frequently given in guides such as CIBSE Guide A, some outdoor air rates per person and the expected quality of indoor air are given in Table~\ref{tb:OutdoorAirRate}.
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{cccc}
+\hline
+Supplied Air Rate & Indoor Air Quality & Classification & Total Indoor CO\textsubscript{2}\\
+\si{\lsp} & & [BS EN 13779] & [ppm]\\
+\hline
+6 & Low & IDA4 & 1600\\
+8 & Moderate & IDA3 & 1200\\
+12.5 & Medium & IDA2 & 900\\
+20 & High & IDA1 & 750\\
+\hline
+\end{tabular}
+\caption{Commonly Used Outdoor Air Rates, see CIBSE Guide A and BS EN 13779}
+\label{tb:OutdoorAirRate}
+\end{table}
+
+\subsection{Pollutant Control}
+\label{ssec:VentPollutantControl}
+
+\todo[inline, color=blue!10]{Review this section}
+
+An internal space may suffer from a build-up of pollutants such as CO\textsubscript{2}, for \gls{VOC}.  The levels of these pollutants within the space can be controlled using mechanical ventilation, by providing external to the space and removing some of the internal air, the concentration of the pollutant can be reduced.  Equations~\ref{eq:PollutantAtTime}, and~\ref{eq:SteadyStatePollutant}, describe the build-up of a pollutant both over time, and at a steady state condition.
+
+CO\textsubscript{2} is typically released through respiration, an adult human would typically release \SI{0.005}{\litre\per\second} each, and outdoor air typically contains 310 ppm of CO\textsubscript{2} (\SI{0.00031}{\litre} per \si{\litre\per\second} of outdoor air).
+
+%$CO_2~Production~per~Person = 0.00004 * Metabolic Rate$
+
+\begin{equation}\label{eq:PollutantAtTime}
+C_t = \frac{q_v c_0 + q_e}{q_v + q_e} \left[ 1-e^{-\frac{q_v + q_e}{V} t} \right]
+\end{equation}
+
+\begin{equation}\label{eq:SteadyStatePollutant}
+C_E = \frac{q_v c_0 + q_e}{q_v + q_e}
+\end{equation}
+
+
+\subsection{Kitchen Ventilation Rates}
+\label{ssec:KitchenVentRates}
+
+In the DW172 document published by the Heating and Ventilation Contractors Association (HVCA), there are five methods of determining the appropiate extract rate for kitchen extract systems.  A mechanical consultant will usually have the extract rate specified by the kitchen specialist, but early stage designs specialists are not usually appointed so an estimation is usually required.
+
+If mechanical supply air is to be provided to the space it is done so at 85\% of the extract volumetric flow rate.
+
+The thermal convection method (Method 1) is the only acceptable method for final design, the other four methods should only be used for indicative or provisional extract flow rates.
+
+\subsubsection{Extract Sizing - Method 1}
+
+This method uses the thermal convection method, and specifies a [\si{\cubic\metre\per\second}] per [\si{\square\metre}] of catering appliance work area.  Table 2 in DW172 shows volumetric extract flow rates for different appliances, then applying a canopy factor.  An example of calculating the total extract rate is given in~\autoref{tab:DW172Method1Example}.
+
+\begin{table}
+\centering
+\begin{tabular}{lcccc}
+\hline
+Item & Area & Fuel & Coefficient & Flow Rate\\
+\hline
+Griddle & 0.4500 & Gas & 0.30 & 0.135\\
+Open Top Range & 0.6750 & Gas & 0.35 & 0.236\\
+Solid Top Range & 0.5625 & Gas & 0.60 & 0.338\\
+Bench & 0.3750 & - & 0.03 & 0.011\\
+Twin Fryers & 0.4875 & Electric & 0.35 & 0.171\\
+Salamander Grille & 0.3000 & Gas & 0.75 & 0.225\\
+\hline
+\multicolumn{4}{r}{Sub-total Extract Volume} & 1.116\\
+\multicolumn{4}{r}{Canopy Factor - \textit{Overhead wall open at both ends}} & 1.25\\
+\hline
+\multicolumn{4}{r}{Volumetric Extract Rate Required} & 1.395~\si{\cubic\metre\per\second}\\
+\hline
+\end{tabular}
+\caption{Example method of calculating the extract flow rate using Method 1 from DW172}
+\label{tab:DW172Method1Example}
+\end{table}
+
+\subsubsection{Extract Sizing - Method 2}
+
+If the size of the canopy is known, but not the full detail of the catering equipment being installed, then by using the face velocity method the total extract rate can be estimated.  \autoref{tab:DW172Method2Example} shows the velocities for different equipment types, and the fastest face velocity should be used.
+
+\begin{table}
+\centering
+\begin{tabular}{cc}
+\hline
+Loading & Face Velocity\\
+\hline
+Light (Boiling pans etc.) & 0.25~\si{\metre\per\second}\\
+Medium (Deep fat fryers etc.) & 0.35~\si{\metre\per\second}\\
+Heavy (Chargrills etc.) & 0.5~\si{\metre\per\second}\\
+\hline
+\end{tabular}
+\caption{Face velocity for the calculation of the extract flow rate using Method 2 from DW172}
+\label{tab:DW172Method2Example}
+\end{table}
+
+\begin{table}
+\centering
+
+\end{table}
+
+\subsubsection{Extract Sizing - Method 3}
+
+A volumetric extract flow rate calculated by assigning a [\si{\cubic\metre\per\second}] value per [\si{\kilo\watt}] of power input, the total air supply is then totalled.
+
+\subsubsection{Extract Sizing - Method 4}
+
+Method 4 is based on air changes per hour [ACH], starting at 40 ACH for volumetric extract and increasing this if high output or densely packed equipment is used.  ACH rates of up to 120 can be seen, and 40 ACH is regarded as the minimum.
+
+\subsubsection{Extract Sizing - Method 5}
+
+An extract flow rate is assigned per metre length of extract hood, a table in DW172 has been provided that gives extract rates for different canopy types and duty levels.
