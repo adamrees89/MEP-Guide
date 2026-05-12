@@ -13,11 +13,13 @@ fancyhdr
 float
 framed
 geometry
+glossaries
 graphics
 hyperref
 imakeidx
 lineno
 listings
+lmodern
 mathtools
 menukeys
 multirow
@@ -26,7 +28,10 @@ pgf
 pgfplots
 relsize
 setspace
+siunitx
+textcomp
 titlesec
 todonotes
+ulem
 xcolor
 xstring
