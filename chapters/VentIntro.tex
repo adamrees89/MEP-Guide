@@ -124,7 +124,7 @@ Door undercuts are used as a method of distributing air between rooms without du
 \textbf{Note:} \textit{Door undercuts are not suitable for all applications, for example, if the door is a fire door, then the undercut may not be possible due to fire regulations. In this case, a transfer duct may be required to provide the necessary air flow between rooms which can be installed with a fire damper to maintain the integrity of the fire wall. See Section~\ref{sec:FireDampers} for more information on fire and fire/smoke dampers.}
 
 
-Shadow Gaps can provide an air path to a return air plenum, this avoids to use of return air grilles.  This can provide a more aesthetically pleasing finish.
+Shadow Gaps can provide an air path to a return air plenum, this avoids to use of return air grilles.  This can provide a more aesthetically pleasing finish, but needs close coordination with the Architectural design and detailing to ensure that the gap is correctly sized and located.
 
 The calculation of free area is the same for both door undercuts and shadow gaps.  The difference being that the length of the door undercut is determined by the width of the door so only the height is adjustable, whereas the length and width of a shadow gap is adjustable.  Equation~\ref{eq:ShadowGapFreeArea}, shows the calculation of free area for a given volumetric flow rate, where $Q$ is the volumetric flow rate [\si{\cubic\metre\per\second}], $v$ is the velocity of the air stream through the gap [\si{\metre\per\second}], and $A$ is the free area [\si{\square\metre}].
 
@@ -132,7 +132,7 @@ The calculation of free area is the same for both door undercuts and shadow gaps
 Q = v A
 \end{equation}
 
-When using Equation~\ref{eq:ShadowGapFreeArea} to calculate the free area of a door undercut, then by knowing the door width, the height of the undercut can be specified.  This two step calculation can be combined into one as shown in equation~\ref{eq:DoorUndercutHeight}, where $h$ is the undercut height [\si{\metre}], and $w$ is the door width [\si{\metre}].
+When using Equation~\ref{eq:ShadowGapFreeArea} to calculate the free area of a door undercut or, then by knowing the door width, the height of the undercut can be specified.  This two step calculation can be combined into one as shown in equation~\ref{eq:DoorUndercutHeight}, where $h$ is the undercut height [\si{\metre}], and $w$ is the door width [\si{\metre}].
 
 \begin{equation}\label{eq:DoorUndercutHeight}
 h = \frac{Q}{w v}
@@ -143,7 +143,7 @@ Sensible air velocities for shadow gaps and door undercuts are below \SI{2.0}{\m
 \section{Ventilation Rates}
 \label{sec:ventRates}
 
-The amount of air supplied or extracted from a space differs depending on the purpose of ventilation.  If air is supplied to maintain a good indoor air quality then the concentration of pollutants (Such as CO\textsubscript{2}) in both the supply air and indoor air needs to be considered alongside the generation of pollutants, see subsection~\ref{ssec:VentPollutantControl}.  Rules of thumb for the amount of outdoor air that should be provided per person are frequently given in guides such as CIBSE Guide A, some outdoor air rates per person and the expected quality of indoor air are given in Table~\ref{tb:OutdoorAirRate}.
+The amount of air supplied or extracted from a space differs depending on the purpose of ventilation.  If air is supplied to maintain a good indoor air quality then the concentration of pollutants (Such as CO\textsubscript{2}) in both the supply air and indoor air needs to be considered alongside the generation of pollutants, see subsection~\ref{ssec:VentPollutantControl}.  Rules of thumb for the amount of outdoor air that should be provided per person are frequently given in guides such as \gls{CIBSE} Guide A, some outdoor air rates per person and the expected quality of indoor air are given in Table~\ref{tb:OutdoorAirRate}.
 
 \begin{table}[htb]
 \centering
@@ -158,7 +158,7 @@ Supplied Air Rate & Indoor Air Quality & Classification & Total Indoor CO\textsu
 20 & High & IDA1 & 750\\
 \hline
 \end{tabular}
-\caption{Commonly Used Outdoor Air Rates, see CIBSE Guide A and BS EN 13779}
+\caption{Commonly Used Outdoor Air Rates, see \gls{CIBSE} Guide A and BS EN 13779}
 \label{tb:OutdoorAirRate}
 \end{table}
 
