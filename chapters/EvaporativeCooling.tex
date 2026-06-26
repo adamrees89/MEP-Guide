@@ -1,0 +1,103 @@
+\chapter{Evaporative Cooling}
+\label{chp:evaporative_cooling}
+\fancyhead[C]{Chapter \ref{chp:evaporative_cooling}}
+
+Evaporative cooling is a process that utilizes the principle of heat transfer through the evaporation of water to lower the temperature of an environment. This method is particularly effective in hot and dry climates, where the air has a low humidity level, allowing for more efficient evaporation.
+
+Practical applications for evaporative cooling include residential and commercial cooling systems, industrial processes, and agricultural practices. In residential settings, evaporative coolers, also known as swamp coolers, are commonly used to provide a cost-effective and energy-efficient alternative to traditional air conditioning systems.
+
+\begin{figure}[H]
+\centering
+\input{./supportfiles/drawings/EvapCoolerInDuct}
+\caption{Typical schematic representation of an evaporative cooler in a duct or AHU section, the component numbering follows the air path from pre-cooler condition through to the off-cooler condition.}
+\label{fig:DuctEvapCooler}
+\end{figure}
+
+\section{Principles of Evaporative Cooling}
+\label{sec:principles_evaporative_cooling}
+
+Evaporative cooling works on the principle of latent heat of vaporisation, as a psychrometric process the air is cooled along a constant wet bulb line (See Section~\ref{sec:evap_psychrometricprocess}).
+
+Warm dry air is passed over a water-saturated medium, such as a pad or mesh. As the air flows through the medium, water evaporates into the air, absorbing heat from the surrounding environment and lowering the air temperature. The effectiveness of this process is influenced by factors such as ambient temperature, humidity levels, and airflow rates.
+
+\section{Psychrometric Process}
+\label{sec:evap_psychrometricprocess}
+
+\todo[inline, color=blue!10]{INSERT PSYCHROMETRIC PROCESS DIAGRAM HERE}
+
+\section{Calculations}
+\label{sec:evap_calculations}
+
+Calculation of the cooling effect of evaporative coolers can be performed using equation~\ref{eq:evap_cooling_calculation}, whilst rearranging for $\Theta_{B}$ as shown in~\autoref{der:EvapEfficiency}:
+
+\begin{equation}\label{eq:evap_cooling_calculation}
+\eta = \frac{\Theta_{A}-\Theta_{B}}{\Theta_{A}-\Theta_{WB}}
+\end{equation}
+
+Where:
+
+\begin{itemize}
+    \item $\Theta_{A}$ is the inlet temperature to the evaporative cooler
+    \item $\Theta_{B}$ is the outlet temperature of the evaporative cooler
+    \item $\Theta_{WB}$ is the wet bulb temperature of the air stream which remains constant
+    \item $\eta$ is the efficiency of the evaporative cooler \textit{(Typically between 80-90\%)}
+\end{itemize}
+
+\begin{derivation}
+\label{der:EvapEfficiency}
+\onehalfspacing
+
+This is a derivation of the equation shown previously in \autoref{eq:evap_cooling_calculation}.
+
+First we acknowledge that the evaporative cooling is adiabatic and that the wet-bulb temperature remains constant through the evaporation process.
+
+With an infinitely long evaporative cooler (and an infinitely powerful fan to draw the air through it!), the supply air temperature \[\Theta_{B}\] are equal. Therefore:
+
+\[\Theta_{B} = \Theta_{WB}\]
+
+Another way to describe this would be to use \textit{Wet Bulb Depression}, this is defined as the difference between dry and wet bulb temperatures, e.g.
+
+Cardiff design conditions (0.4\%): \SI{26.2}{\celsius} dry-bulb and \SI{18.2}{\celsius} wet-bulb.
+
+Wet Bulb Depression at design conditions would be \[\Theta_{A} - \Theta_{B} = 26.2 - 18.2 = 8\] | \SI{8}{\celsius}. So a 100\% efficient evaporative cooler would produce a \SI{8}{\celsius} temperature drop at Cardiff design conditions.
+
+As we know 100\% efficiency is improbable in this situation, an efficiency ratio \[\eta\] can be added to the wet bulb depression equation to give the air temperature after the evaporative cooler:
+
+\[Temperature Reduction = \eta (\Theta_{A} - \Theta_{WB})\]
+
+The achieved temperature after the evaporative cooler \[\Theta_{B}\] would then be:
+
+\[\Theta_{B} = \Theta{A} - Temperature Reduction\]
+
+Substituting the above Temperature Reduction formula:
+
+\[\Theta_{B} = \Theta_{A} - \eta(\Theta_{A} - \Theta_{WB})\]
+
+\textbf{\textit{QED}}
+\end{derivation}
+
+\subsubsection{Evaporative Cooler Example}
+\label{ssec:EvapCalExample}
+
+
+
+\section{Commercial Applications}
+\label{sec:evap_commercial_applications}
+
+\subsection{Stand-alone Evaporative Coolers}
+\label{ssec:standalone_evap_coolers}
+
+
+\subsection{AHU Evaporative Cooling}
+\label{ssec:ahu_evap_cooling}
+
+\subsubsection{Direct AHU Evaporative Cooling}
+
+
+
+\subsubsection{Indirect AHU Evaporative Cooling}
+
+
+
+\subsubsection{Exhaust Air Stream Evaporative Cooling}
+
