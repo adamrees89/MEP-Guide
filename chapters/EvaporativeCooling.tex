@@ -1,0 +1,67 @@
+\chapter{Evaporative Cooling}
+\label{chp:evaporative_cooling}
+\fancyhead[C]{Chapter \ref{chp:evaporative_cooling}}
+
+Evaporative cooling is a process that utilizes the principle of heat transfer through the evaporation of water to lower the temperature of an environment. This method is particularly effective in hot and dry climates, where the air has a low humidity level, allowing for more efficient evaporation.
+
+Practical applications for evaporative cooling include residential and commercial cooling systems, industrial processes, and agricultural practices. In residential settings, evaporative coolers, also known as swamp coolers, are commonly used to provide a cost-effective and energy-efficient alternative to traditional air conditioning systems.
+
+\todo[inline, color=blue!10]{graphic of evaporative cooler in duct}
+
+\begin{figure}[H]
+\centering
+\input{./supportfiles/drawings/EvapCoolerInDuct}
+\caption{Typical schematic representation of a evaporative cooler in a duct or AHU section, the component numbering follows the air path from pre-cooler condition through to the off-cooler condition.}
+\label{fig:DuctEvapCooler}
+\end{figure}
+
+\section{Principles of Evaporative Cooling}
+\label{sec:principles_evaporative_cooling}
+
+Evaporative cooling works on the principal of latent heat of vaporisation
+
+Warm dry air is passed over a water-saturated medium, such as a pad or mesh. As the air flows through the medium, water evaporates into the air, absorbing heat from the surrounding environment and lowering the air temperature. The effectiveness of this process is influenced by factors such as ambient temperature, humidity levels, and airflow rates.
+
+\section{Psychrometric Process}
+\label{sec:evap_psychrometricprocess}
+
+\todo[inline, color=blue!10]{INSERT PSYCHROMETRIC PROCESS DIAGRAM HERE}
+
+\section{Calculations}
+\label{sec:evap_calculations}
+
+Calculation of the cooling effect of evaporative coolers can be performed using equation~\ref{eq:evap_cooling_calculation}:
+
+\begin{equation}\label{eq:evap_cooling_calculation}
+\eta = \frac{\Theta_{A}-\Theta_{B}}{\Theta_{A}-\Theta_{WB}}
+\end{equation}
+
+Where:
+
+\begin{itemize}
+    \item $\Theta_{A}$ is the inlet temperature to the evaporative cooler
+    \item $\Theta_{B}$ is the outlet temperature of the evaporative cooler
+    \item $\Theta_{WB}$ is the wet bulb temperature of the air stream which remains constant
+    \item $\eta$ is the efficiency of the evaporative cooler \textit{(Typically between 80-90\%)}
+\end{itemize}
+
+\section{Commercial Applications}
+\label{sec:evap_commercial_applications}
+
+\subsection{Stand-alone Evaporative Coolers}
+\label{ssec:standalone_evap_coolers}
+
+
+\subsection{AHU Evaporative Cooling}
+\label{ssec:ahu_evap_cooling}
+
+\subsubsection{Direct AHU Evaporative Cooling}
+
+
+
+\subsubsection{Indirect AHU Evaporative Cooling}
+
+
+
+\subsubsection{Exhaust Air Stream Evaporative Cooling}
+

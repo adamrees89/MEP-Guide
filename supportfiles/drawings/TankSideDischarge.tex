@@ -1,0 +1,19 @@
+\begin{tikzpicture}[scale=1, every node/.style={scale=1}]
+
+%Draw Tank Casing
+
+\draw [black] (0,1.25) -- (0,6);
+\draw [black] (6,6) -- (6,0) -- (0,0) -- (0,0.75);
+\draw [black] (0,1.25) -- (-0.25,1.25);
+\draw [black] (0,0.75) -- (-0.25,0.75);
+
+%Draw Water
+
+\fill [pattern color=blue, pattern= north west lines] (0,0) rectangle (6,5);
+\draw [blue, ->] (0,1) -- (-1,1);
+\node [left] at (-1,1) {Outlet};
+
+\draw [|-|, black] (6.5,1) -- (6.5,5);
+\node [right] at (6.5,3) {H};
+
+\end{tikzpicture}

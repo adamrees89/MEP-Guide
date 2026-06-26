@@ -1,0 +1,28 @@
+\begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8}]
+
+%Duct Casing
+\draw [back, dashed] (0,0) -- (0.5,0)
+\draw [black] (0.5,0) -- (5,0)
+\draw [back, dashed] (5,0) -- (5.5,0)
+\draw [back, dashed] (0,4) -- (0.5,4)
+\draw [black] (0.5,4) -- (5,4)
+\draw [back, dashed] (5,4) -- (5.5,4)
+
+%Air Stream Labels
+\node [above] at (0.75,2) {A}
+\node [above] at (4.75,2) {B}
+
+%Evaporative Cooler & Air Flow Arrows
+\fill [gray, pattern= north west lines, opacity=0.4,draw] (2,0) rectangle (3.5,4)
+\draw [->] (1.3,2) -- (1.8,2)
+\draw [->] (3.7,2) -- (4.2,2)
+
+%Spray Nozzle and Reservoir
+\draw [blue] (2,4.2) -- (2.2,4.4) -- (2.4,4.2)
+\draw [blue] (2.6,4.2) -- (2.8,4.4) -- (3.0,4.2)
+\draw [blue] (3.2,4.2) -- (3.4,4.4) -- (3.6,4.2)
+
+\draw [black] (1.8,-0.5) -- (1.8,-1) -- (3.7,-1) -- (3.7,-0.5)
+\draw [blue, pattern= south west lines] (1.8,-0.6) rectangle (3.7,-1)
+
+\end{tikzpicture}
