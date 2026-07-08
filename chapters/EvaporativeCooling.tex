@@ -43,6 +43,14 @@ Where:
     \item $\eta$ is the efficiency of the evaporative cooler \textit{(Typically between 80-90\%)}
 \end{itemize}
 
+This can be re-arranged to give the outlet temperature of the evaporative cooler:
+
+\begin{equation}\label{eq:evap_cooling_calculation_rearanged}
+\Theta_{B} = \Theta_{A} - \eta(\Theta_{A} - \Theta_{WB})
+\end{equation}
+
+\autoref{eq:evap_cooling_calculation_rearanged} has been derived in \autoref{der:EvapEfficiency} and is used to calculate the outlet temperature of an evaporative cooler given the inlet temperature, wet bulb temperature, and efficiency of the cooler.
+
 \begin{derivation}
 \label{der:EvapEfficiency}
 \onehalfspacing
@@ -51,21 +59,25 @@ This is a derivation of the equation shown previously in \autoref{eq:evap_coolin
 
 First we acknowledge that the evaporative cooling is adiabatic and that the wet-bulb temperature remains constant through the evaporation process.
 
-With an infinitely long evaporative cooler (and an infinitely powerful fan to draw the air through it!), the supply air temperature \[\Theta_{B}\] are equal. Therefore:
+With an infinitely long evaporative cooler (and an infinitely powerful fan to draw the air through it!), the supply air temperature and wet-bulb temperature are equal. Therefore:
 
 \[\Theta_{B} = \Theta_{WB}\]
 
 Another way to describe this would be to use \textit{Wet Bulb Depression}, this is defined as the difference between dry and wet bulb temperatures, e.g.
 
-Cardiff design conditions (0.4\%): \SI{26.2}{\celsius} dry-bulb and \SI{18.2}{\celsius} wet-bulb.
+Cardiff summer design conditions (0.4\%): \SI{26.2}{\celsius} dry-bulb and \SI{18.2}{\celsius} wet-bulb.
 
-Wet Bulb Depression at design conditions would be \[\Theta_{A} - \Theta_{B} = 26.2 - 18.2 = 8\] | \SI{8}{\celsius}. So a 100\% efficient evaporative cooler would produce a \SI{8}{\celsius} temperature drop at Cardiff design conditions.
+Wet Bulb Depression at design conditions would be:
 
-As we know 100\% efficiency is improbable in this situation, an efficiency ratio \[\eta\] can be added to the wet bulb depression equation to give the air temperature after the evaporative cooler:
+\[\Theta_{A} - \Theta_{B} = 26.2 - 18.2 = 8\] 
+
+A 100\% efficient evaporative cooler would produce a \SI{8}{\celsius} temperature drop at Cardiff design conditions.
+
+As we know 100\% efficiency is improbable in this situation, an efficiency ratio $eta$ can be added to the wet bulb depression equation to give the air temperature after the evaporative cooler:
 
 \[Temperature Reduction = \eta (\Theta_{A} - \Theta_{WB})\]
 
-The achieved temperature after the evaporative cooler \[\Theta_{B}\] would then be:
+The achieved temperature after the evaporative cooler $\Theta_{B}$ would then be:
 
 \[\Theta_{B} = \Theta{A} - Temperature Reduction\]
 
