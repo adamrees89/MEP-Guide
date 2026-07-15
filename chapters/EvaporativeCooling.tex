@@ -63,15 +63,9 @@ With an infinitely long evaporative cooler (and an infinitely powerful fan to dr
 
 \[\Theta_{B} = \Theta_{WB}\]
 
-Another way to describe this would be to use \textit{Wet Bulb Depression}, this is defined as the difference between dry and wet bulb temperatures, e.g.
+Another way to describe this would be to use \textit{Wet Bulb Depression}, this is defined as the difference between dry and wet bulb temperatures, i.e.
 
-Cardiff summer design conditions (0.4\%): \SI{26.2}{\celsius} dry-bulb and \SI{18.2}{\celsius} wet-bulb.
-
-Wet Bulb Depression at design conditions would be:
-
-\[\Theta_{A} - \Theta_{B} = 26.2 - 18.2 = 8\] 
-
-A 100\% efficient evaporative cooler would produce a \SI{8}{\celsius} temperature drop at Cardiff design conditions.
+\[\Theta_{A} - \Theta_{WB}\]
 
 As we know 100\% efficiency is improbable in this situation, an efficiency ratio $\eta$ can be added to the wet bulb depression equation to give the air temperature after the evaporative cooler:
 
@@ -91,25 +85,66 @@ Substituting the above Temperature Reduction formula:
 \subsubsection{Evaporative Cooler Example}
 \label{ssec:EvapCalExample}
 
+Cardiff summer design conditions (0.4\%): \SI{26.2}{\celsius} dry-bulb and \SI{18.2}{\celsius} wet-bulb.
 
+Wet Bulb Depression at design conditions would be:
+
+$\Theta_{A} - \Theta_{WB} = 26.2 - 18.2 = 8$
+
+i.e. A 100\% efficient evaporative cooler would produce a \SI{8}{\celsius} temperature drop at Cardiff design conditions.
+
+Using the formula derived in~\autoref{der:EvapEfficiency} and shown in~\autoref{eq:evap_cooling_calculation_rearanged} can provide the supply air temperature possible with a commercially available evaporative cooler assuming an evaporative cooler efficiency of 85\%:
+
+$\Theta_{B} = 26.2 - 0.85(26.2 - 18.2) = \SI{19.4}{\celsius}$
 
 \section{Commercial Applications}
 \label{sec:evap_commercial_applications}
 
+The following subsections provide an overview of the different types of evaporative cooling systems used in commercial applications, including stand-alone evaporative coolers and AHU (Air Handling Unit) evaporative cooling systems.
+
 \subsection{Stand-alone Evaporative Coolers}
 \label{ssec:standalone_evap_coolers}
 
+Sometimes nicknamed \textit{'swamp coolers'} or known as direct evaporative cooling, stand-alone evaporative coolers are self-contained units that can be placed in a room or space to provide cooling. These units typically consist of a fan, water reservoir, and a water-saturated medium through which air is drawn. As the air passes through the medium, it is cooled by the evaporation of water. These can be effective in dry climates, but in a sealed room will quickly increase the relative humidity to uncomfortable levels. Their effectiveness is limited in humid climates, where the air already contains a significant amount of moisture; however, in the correct conditions they can provide a cost-effective and energy-efficient cooling solution.
 
 \subsection{AHU Evaporative Cooling}
 \label{ssec:ahu_evap_cooling}
 
+Evaporative units can be installed within an \gls{AHU} to cool the supply air to the space, cooling the supply air is the ultimate aim, but the evaporative cooling process can be implemented in different locations with various benefits and drawbacks. The following subsections provide an overview of the different types of AHU evaporative cooling systems.
+
 \subsubsection{Direct AHU Evaporative Cooling}
 
+The evaporative cooler is installed directly in the supply air stream of the \gls{AHU}, cooling the air before it is distributed to the space. This method is effective in reducing the supply air temperature, but it can also increase the humidity of the air, which may not be desirable in certain applications. Direct AHU evaporative cooling is most effective in dry climates where the increase in humidity can be beneficial.
 
+\todo[inline, color=blue!10]{WORKED EXAMPLE OF DIRECT AHU EVAP COOLING HERE}
 
 \subsubsection{Indirect AHU Evaporative Cooling}
 
+This is a cooling only system where outside air is not provided to the space by the AHU. Outside air is passed through an evaporative cooler then over a heat exchanger, and is exhausted. Indoor return air is passed over the heat exchanger, is cooled, then returned to the space.
 
+This is not likely to be a practical method of comfort cooling within the United Kingdom given the relatively humid weather and the need to provide outdoor air to spaces to allow occupants to occupy them safely. There will be specialist use cases for this type of cooler such as data centres, storage facilities, etc where high volumes of outdoor air are not required; however, these types of facilities typically utilise closed loop refrigerant based cooling systems with specialised indoor cooling units such as \GLS{CRAH} units.
 
 \subsubsection{Exhaust Air Stream Evaporative Cooling}
 
+The evaporative cooler is installed in the return air section of the \gls{AHU} allowing the return air stream to be cooled. The air is then passed through a heat exchanger cooling the supply air without the increase in humidity levels as the evaporated water is exhausted to atmosphere once passed through the heat exchanger.
+
+\textbf{Worked Example}
+
+Outside Air conditions: \SI{26.2}{\celsius} dry-bulb and \SI{18.2}{\celsius} wet-bulb.
+Room conditions: \SI{22}{\celsius} dry-bulb and 60\% \GLS{RH}
+
+The room conditions indicate a wet-bulb temperature of \SI{15.5}{\celsius} which will be used later to calculate the evaporative cooling effect.
+
+Using~\autoref{eq:evap_cooling_calculation_rearanged}, the return air is passed through an 85\% efficient evaporative cooler and its temperature is reduced to \SI{16.48}{\celsius} as shown in~\autoref{eq:EEAHU_Example}. The \GLS{RH} of the return air stream is increased to 95\%.
+
+\begin{equation}\label{eq:EEAHU_Example}
+\Theta_{B} = 22 - 0.85(22 - 15.5) = 16.475
+\end{equation}
+
+This cooled return air is then passed through the \gls{AHU} heat exchanger, cooling the supply air to the space without increasing the humidity levels. The supply air temperature can be calculated using the heat exchanger effectiveness and the temperature difference between the cooled return air and the outside air as described in~\autoref{ssec:Vent_HeatRecoveryCalculations}.
+
+The corresponding supply air temperature after the heat exchanger (Assumed 73\% efficient) would be \SI{19.1}{\celsius}, as shown in~\autoref{eq:EEAHU_PHX_Example}. Using the psychrometric chart, the supply air to the space would be \SI{19.1}{\celsius} dry-bulb and \SI{15.8}{\celsius} wet-bulb, which is a reduced humidity level when compared to direct AHU evaporative cooling and is approximately 80-85\% \GLS{RH}.
+
+\begin{equation}\label{eq:EEAHU_PHX_Example}
+t_2 = (0.73 \times (16.475 - 26.2)) + 26.2 = 19.1\si{\celsius}, \text{ say } \SI{19}{\celsius}
+\end{equation}
