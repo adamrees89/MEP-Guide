@@ -21,8 +21,9 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
     
-      - name: Cache TeX Live installation
+      - name: Cache TeX Live installation and packages
         uses: actions/cache@v4
+        id: texlive-cache
         with:
           path: /tmp/texlive
           key: texlive-2026-${{ hashFiles('texlive/texlive.profile', 'texlive/texlive_packages') }}
@@ -32,6 +33,12 @@ jobs:
       - name: Install TeX Live + packages
         shell: bash
         run: |
+          # Skip installation if cache was restored
+          if [ "${{ steps.texlive-cache.outputs.cache-hit }}" == "true" ]; then
+            echo "TeX Live cache restored - skipping installation"
+            exit 0
+          fi
+          
           chmod +x texlive/texlive_install.sh
           texlive/texlive_install.sh
 
@@ -46,7 +53,7 @@ jobs:
         run: |
             set -e
   
-            # Make sure we’re on the PR branch
+            # Make sure we're on the PR branch
             echo "On branch: $(git branch --show-current)"
   
             # Add the built PDF
@@ -67,7 +74,3 @@ jobs:
   
             # Push back to the PR branch
             git push origin HEAD:${{ github.head_ref }}
-
-
-
-
