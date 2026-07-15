@@ -3,7 +3,7 @@ name: Build PDF from LaTeX
 on: ["pull_request"]
 
 permissions:
-  contents: write          # required to push commits
+  contents: write  # required to push commits
   pull-requests: read
 
 concurrency:
