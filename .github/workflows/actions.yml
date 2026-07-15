@@ -26,7 +26,7 @@ jobs:
         id: texlive-cache
         with:
           path: /tmp/texlive
-          key: texlive-2026-${{ hashFiles('texlive/texlive.profile', 'texlive/texlive_packages') }}
+          key: texlive-2026-${{ runner.os }}
           restore-keys: |
             texlive-2026-
 
