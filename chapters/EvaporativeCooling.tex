@@ -135,16 +135,16 @@ Room conditions: \SI{22}{\celsius} dry-bulb and 60\% \GLS{RH}
 
 The room conditions indicate a wet-bulb temperature of \SI{15.5}{\celsius} which will be used later to calculate the evaporative cooling effect.
 
-Using~\autoref{eq:evap_cooling_calculation_rearanged}, the return air is passed through an 85\% efficient evaporative cooler and it's temperature is reduced to \SI{16}{\celsius} as shown in~\autoref{eq:EEAHU_Example}. The \GLS{RH} of the return air stream is increased to 95\%.
+Using~\autoref{eq:evap_cooling_calculation_rearanged}, the return air is passed through an 85\% efficient evaporative cooler and its temperature is reduced to \SI{16.48}{\celsius} as shown in~\autoref{eq:EEAHU_Example}. The \GLS{RH} of the return air stream is increased to 95\%.
 
 \begin{equation}\label{eq:EEAHU_Example}
-\Theta_{B} = 22 - 0.85(22 - 15) = 16.05
+\Theta_{B} = 22 - 0.85(22 - 15.5) = 16.475
 \end{equation}
 
 This cooled return air is then passed through the \gls{AHU} heat exchanger, cooling the supply air to the space without increasing the humidity levels. The supply air temperature can be calculated using the heat exchanger effectiveness and the temperature difference between the cooled return air and the outside air as described in~\autoref{ssec:Vent_HeatRecoveryCalculations}.
 
-The corresponding supply air temperature after the heat exchanger (Assumed 73\% efficient) would be \SI{19}{\celsius}, as shown in~\autoref{eq:EEAHU_PHX_Example}. Using the psychrometric chart, the supply air to the space would be \SI{19}{\celsius} dry-bulb and \SI{15.8}{\celsius} wet-bulb, which is a reduced humidity level when compared to direct AHU evaporative cooling and is approximately 80-85\% \GLS{RH}.
+The corresponding supply air temperature after the heat exchanger (Assumed 73\% efficient) would be \SI{19.1}{\celsius}, as shown in~\autoref{eq:EEAHU_PHX_Example}. Using the psychrometric chart, the supply air to the space would be \SI{19.1}{\celsius} dry-bulb and \SI{15.8}{\celsius} wet-bulb, which is a reduced humidity level when compared to direct AHU evaporative cooling and is approximately 80-85\% \GLS{RH}.
 
 \begin{equation}\label{eq:EEAHU_PHX_Example}
-t_2 = (0.73 \times (16 - 26.2)) + 26.2 = 18.75\si{\celsius}, say \SI{19}{\celsius}
+t_2 = (0.73 \times (16.475 - 26.2)) + 26.2 = 19.1\si{\celsius}, \text{ say } \SI{19}{\celsius}
 \end{equation}
