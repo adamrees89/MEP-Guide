@@ -49,8 +49,9 @@ jobs:
             # Make sure we’re on the PR branch
             echo "On branch: $(git branch --show-current)"
   
-            # Add the built PDF
+            # Add the built PDF and other files
             git add "MEP_Guide.pdf"
+            git add "main.tdo"
   
             # If nothing changed, exit gracefully
             if git diff --cached --quiet; then
